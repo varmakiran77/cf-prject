@@ -179,7 +179,7 @@
         <fullName>copado__Org__c</fullName>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
-        <label>Org</label>
+        <label>Credential</label>
         <length>255</length>
         <required>false</required>
         <trackTrending>false</trackTrending>
@@ -335,7 +335,7 @@
         <externalId>false</externalId>
         <label>Test Title</label>
         <length>255</length>
-        <required>false</required>
+        <required>true</required>
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
@@ -406,6 +406,6 @@
         <masterLabel>Add Test Script Steps</masterLabel>
         <openType>replace</openType>
         <protected>false</protected>
-        <url>/apex/{!IF(CONTAINS($Action.copado__User_Story__c.New, &apos;copado__&apos;), &apos;copado__&apos;, &apos;&apos;)}CreateTestScriptSteps?tId={!copado__Test_Script__c.Id}</url>
+        <url>/apex/{!IF(CONTAINS($Action.copado__User_Story__c.New, &#39;copado__&#39;), &#39;copado__&#39;, &#39;&#39;)}CreateTestScriptSteps?tId={!copado__Test_Script__c.Id}</url>
     </webLinks>
 </CustomObject>

@@ -158,18 +158,22 @@
     <enableFeeds>false</enableFeeds>
     <fields>
         <fullName>ActivityDate</fullName>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>ActivityDateTime</fullName>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>Attendees</fullName>
     </fields>
     <fields>
         <fullName>Description</fullName>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>DurationInMinutes</fullName>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>Email</fullName>
@@ -182,21 +186,26 @@
     </fields>
     <fields>
         <fullName>IsAllDayEvent</fullName>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>IsPrivate</fullName>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>IsRecurrence2</fullName>
     </fields>
     <fields>
         <fullName>IsReminderSet</fullName>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>Location</fullName>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>OwnerId</fullName>
+        <trackHistory>false</trackHistory>
         <type>Lookup</type>
     </fields>
     <fields>
@@ -204,24 +213,29 @@
     </fields>
     <fields>
         <fullName>ShowAs</fullName>
+        <trackHistory>false</trackHistory>
     </fields>
     <fields>
         <fullName>StartDateTime</fullName>
     </fields>
     <fields>
         <fullName>Subject</fullName>
+        <trackHistory>false</trackHistory>
         <type>Picklist</type>
     </fields>
     <fields>
         <fullName>Type</fullName>
+        <trackHistory>false</trackHistory>
         <type>Picklist</type>
     </fields>
     <fields>
         <fullName>WhatId</fullName>
+        <trackHistory>false</trackHistory>
         <type>Lookup</type>
     </fields>
     <fields>
         <fullName>WhoId</fullName>
+        <trackHistory>false</trackHistory>
         <type>Lookup</type>
     </fields>
     <listViews>
@@ -256,7 +270,7 @@
             <operation>equals</operation>
             <value>LAST_N_DAYS:30</value>
         </filters>
-        <label>My Team&apos;s Recent Events</label>
+        <label>My Team&#39;s Recent Events</label>
     </listViews>
     <listViews>
         <fullName>MyTeamsUpcomingEvents</fullName>
@@ -273,7 +287,7 @@
             <operation>equals</operation>
             <value>TODAY,NEXT_N_DAYS:30</value>
         </filters>
-        <label>My Team&apos;s Upcoming Events</label>
+        <label>My Team&#39;s Upcoming Events</label>
     </listViews>
     <listViews>
         <fullName>MyUpcomingEvents</fullName>
@@ -312,8 +326,8 @@
             <operation>greaterOrEqual</operation>
             <value>TODAY</value>
         </filters>
-        <label>Today&apos;s Agenda</label>
+        <label>Today&#39;s Agenda</label>
     </listViews>
-    <searchLayouts/>
+    <searchLayouts />
     <sharingModel>Private</sharingModel>
 </CustomObject>

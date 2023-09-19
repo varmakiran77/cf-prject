@@ -151,7 +151,7 @@
     <enableHistory>true</enableHistory>
     <enableLicensing>false</enableLicensing>
     <enableReports>true</enableReports>
-    <enableSearch>false</enableSearch>
+    <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>Private</externalSharingModel>
@@ -448,7 +448,7 @@
         <deleteConstraint>SetNull</deleteConstraint>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
-        <label>Org Credential</label>
+        <label>Credential</label>
         <referenceTo>copado__Org__c</referenceTo>
         <relationshipLabel>Static Code Analysis Results</relationshipLabel>
         <relationshipName>Static_Code_Analysis_Results</relationshipName>
@@ -541,7 +541,7 @@
         <summaryFilterItems>
             <field>copado__Static_Code_Analysis_Violation__c.copado__Resolution__c</field>
             <operation>notEqual</operation>
-            <value>Won&apos;t fix</value>
+            <value>Won&#39;t fix</value>
         </summaryFilterItems>
         <summaryFilterItems>
             <field>copado__Static_Code_Analysis_Violation__c.copado__Resolution__c</field>
@@ -594,11 +594,11 @@
         <fullName>copado__Wont_fix__c</fullName>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
-        <label>Won&apos;t fix</label>
+        <label>Won&#39;t fix</label>
         <summaryFilterItems>
             <field>copado__Static_Code_Analysis_Violation__c.copado__Resolution__c</field>
             <operation>equals</operation>
-            <value>Won&apos;t fix</value>
+            <value>Won&#39;t fix</value>
         </summaryFilterItems>
         <summaryForeignKey>copado__Static_Code_Analysis_Violation__c.copado__Static_Code_Analysis_Result__c</summaryForeignKey>
         <summaryOperation>count</summaryOperation>
@@ -627,7 +627,20 @@
         <description>Record Type for free of charge PMD integration</description>
         <label>PMD</label>
     </recordTypes>
-    <searchLayouts/>
+    <listViews>
+        <fullName>copado__All</fullName>
+        <columns>NAME</columns>
+        <columns>copado__Number_of_Violations__c</columns>
+        <columns>copado__Score_v11__c</columns>
+        <columns>copado__User_Story__c</columns>
+        <columns>copado__Org_Credential__c</columns>
+        <columns>copado__Deployment_Step__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <searchLayouts />
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>

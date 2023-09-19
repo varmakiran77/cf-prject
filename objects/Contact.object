@@ -424,6 +424,11 @@ CASE( Dreamforce__c,
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
+        <fullName>GenderIdentity</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
         <fullName>HasOptedOutOfEmail</fullName>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
@@ -485,13 +490,18 @@ CASE( Dreamforce__c,
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
+        <fullName>Pronouns</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
         <fullName>ReportsToId</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Lookup</type>
     </fields>
     <fields>
         <fullName>TIMBASURVEYS__SurveyReminder__c</fullName>
-        <defaultValue>&apos;&apos;</defaultValue>
+        <defaultValue>&#39;&#39;</defaultValue>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>SurveyReminder</label>
@@ -578,7 +588,6 @@ CASE( Dreamforce__c,
         <customTabListAdditionalFields>FULL_NAME</customTabListAdditionalFields>
         <customTabListAdditionalFields>ACCOUNT.NAME</customTabListAdditionalFields>
         <customTabListAdditionalFields>CONTACT.PHONE1</customTabListAdditionalFields>
-        <listViewButtons>TIMBASURVEYS__send_survey</listViewButtons>
         <lookupDialogsAdditionalFields>FULL_NAME</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>ACCOUNT.NAME</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>ACCOUNT.SITE</lookupDialogsAdditionalFields>
@@ -610,13 +619,13 @@ CASE( Dreamforce__c,
         <height>600</height>
         <isResizable>true</isResizable>
         <linkType>url</linkType>
-        <masterLabel>Google Maps</masterLabel>
+        <masterLabel>Mapas de Google</masterLabel>
         <openType>newWindow</openType>
         <position>none</position>
         <protected>false</protected>
         <showsLocation>false</showsLocation>
         <showsStatus>false</showsStatus>
-        <url>http://maps.google.com/maps?f=q&amp;hl=en&amp;q={!Contact_MailingStreet}+{!Contact_MailingCity}+{!Contact_MailingState}&amp;om=1</url>
+        <url>http://maps.google.com/maps?f=q&amp;hl=en&amp;q={!Contact.MailingStreet}+{!Contact.MailingCity}+{!Contact.MailingState}&amp;om=1</url>
     </webLinks>
     <webLinks>
         <fullName>GoogleSearch</fullName>
@@ -629,13 +638,13 @@ CASE( Dreamforce__c,
         <height>600</height>
         <isResizable>true</isResizable>
         <linkType>url</linkType>
-        <masterLabel>Google Search</masterLabel>
+        <masterLabel>Búsqueda en Google</masterLabel>
         <openType>newWindow</openType>
         <position>none</position>
         <protected>false</protected>
         <showsLocation>false</showsLocation>
         <showsStatus>false</showsStatus>
-        <url>http://www.google.com/search?q={!Contact_FirstName} {!Contact_LastName}</url>
+        <url>http://www.google.com/search?q={!Contact.FirstName} {!Contact.LastName}</url>
     </webLinks>
     <webLinks>
         <fullName>SendGmail</fullName>
@@ -648,13 +657,13 @@ CASE( Dreamforce__c,
         <height>600</height>
         <isResizable>true</isResizable>
         <linkType>url</linkType>
-        <masterLabel>Send Gmail</masterLabel>
+        <masterLabel>Enviar a Gmail</masterLabel>
         <openType>newWindow</openType>
         <position>none</position>
         <protected>false</protected>
         <showsLocation>false</showsLocation>
         <showsStatus>false</showsStatus>
-        <url>https://mail.google.com/mail?view=cm&amp;tf=0&amp;to={!Contact_Email}&lt;{!Contact_LastName}, {!Contact_FirstName}&gt;&amp;tf=1</url>
+        <url>https://mail.google.com/mail?view=cm&amp;tf=0&amp;to={!Contact.Email}&lt;{!Contact.LastName}, {!Contact.FirstName}&gt;&amp;tf=1</url>
     </webLinks>
     <webLinks>
         <fullName>TIMBASURVEYS__Send_Survey_Contact_Detail</fullName>
@@ -692,7 +701,7 @@ var currentlocation_re = (window.location.pathname).toString() ;
 var records = {!GETRECORDIDS( $ObjectType.Contact )};
 
 if(records.length &gt; 0 ){
-if(currentlocation_re.indexOf(&apos;apex&apos;) &gt; -1){
+if(currentlocation_re.indexOf(&#39;apex&#39;) &gt; -1){
 if(window.parent != null ){
 if(window.parent.records !=undefined){
 window.parent.records=records;
@@ -707,7 +716,7 @@ window.parent.records=records;
 window.location = &quot;/apex/timbasurveys__collectionhub?cIds={!URLENCODE(Contact.Id)}&amp;retURL=&quot; + encodeURIComponent(window.location);
 }
 } else {
-alert(&apos;Only 50 invitations can be sent from standard Contact list&apos;);
+alert(&#39;Only 50 invitations can be sent from standard Contact list&#39;);
 }
 }
 }</url>
@@ -723,13 +732,13 @@ alert(&apos;Only 50 invitations can be sent from standard Contact list&apos;);
         <height>600</height>
         <isResizable>true</isResizable>
         <linkType>url</linkType>
-        <masterLabel>Yahoo! Maps</masterLabel>
+        <masterLabel>Mapas de Yahoo!</masterLabel>
         <openType>newWindow</openType>
         <position>none</position>
         <protected>false</protected>
         <showsLocation>true</showsLocation>
         <showsStatus>true</showsStatus>
-        <url>http://maps.yahoo.com/py/maps.py?cn={!Contact_MailingCountry}&amp;csz={!Contact_MailingCity}+{!Contact_MailingState}+{!Contact_MailingPostalCode}+&amp;addr={!Contact_MailingAddress}</url>
+        <url>http://maps.yahoo.com/py/maps.py?cn={!Contact.MailingCountry}&amp;csz={!Contact.MailingCity}+{!Contact.MailingState}+{!Contact.MailingPostalCode}+&amp;addr={!Contact.MailingStreet}</url>
     </webLinks>
     <webLinks>
         <fullName>YahooWeather</fullName>
@@ -742,12 +751,12 @@ alert(&apos;Only 50 invitations can be sent from standard Contact list&apos;);
         <height>600</height>
         <isResizable>true</isResizable>
         <linkType>url</linkType>
-        <masterLabel>Yahoo! Weather</masterLabel>
+        <masterLabel>Yahoo! Tiempo</masterLabel>
         <openType>newWindow</openType>
         <position>none</position>
         <protected>false</protected>
         <showsLocation>false</showsLocation>
         <showsStatus>false</showsStatus>
-        <url>http://weather.yahoo.com/search/weather2?p={!Contact_MailingPostalCode}</url>
+        <url>http://weather.yahoo.com/search/weather2?p={!Contact.MailingPostalCode}</url>
     </webLinks>
 </CustomObject>

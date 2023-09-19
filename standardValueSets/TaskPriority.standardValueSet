@@ -4,7 +4,7 @@
     <standardValue>
         <fullName>High</fullName>
         <default>false</default>
-        <label>High</label>
+        <label>Alta</label>
         <highPriority>true</highPriority>
     </standardValue>
     <standardValue>
@@ -16,7 +16,7 @@
     <standardValue>
         <fullName>Low</fullName>
         <default>false</default>
-        <label>Low</label>
+        <label>Baja</label>
         <highPriority>false</highPriority>
     </standardValue>
 </StandardValueSet>

@@ -4,26 +4,26 @@
     <standardValue>
         <fullName>Purchased</fullName>
         <default>false</default>
-        <label>Purchased</label>
+        <label>Comprado</label>
     </standardValue>
     <standardValue>
         <fullName>Shipped</fullName>
         <default>false</default>
-        <label>Shipped</label>
+        <label>Enviado</label>
     </standardValue>
     <standardValue>
         <fullName>Installed</fullName>
         <default>false</default>
-        <label>Installed</label>
+        <label>Instalado</label>
     </standardValue>
     <standardValue>
         <fullName>Registered</fullName>
         <default>false</default>
-        <label>Registered</label>
+        <label>Registrado</label>
     </standardValue>
     <standardValue>
         <fullName>Obsolete</fullName>
         <default>false</default>
-        <label>Obsolete</label>
+        <label>Obsoleto</label>
     </standardValue>
 </StandardValueSet>

@@ -167,12 +167,23 @@
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>copado__Apply_Connection_Behaviours_to_existing__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Use this option if you want User Stories which already promoted in your Copado Pipeline to apply to the connection behaviours for back promotions which you create in Copado Continuous Delivery</inlineHelpText>
+        <label>Apply Connection Behaviors to All</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>copado__Block_Commits__c</fullName>
         <defaultValue>false</defaultValue>
         <deprecated>false</deprecated>
         <description>If checked, committing changes on user stories linked to this Pipeline will not be allowed</description>
         <externalId>false</externalId>
-        <inlineHelpText>If checked, committing changes on user stories linked to this deployment flow will not be allowed.</inlineHelpText>
+        <inlineHelpText>If checked, committing changes on user stories linked to this Pipeline will not be allowed</inlineHelpText>
         <label>Block Commits</label>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -216,6 +227,43 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
+    </fields>
+    <fields>
+        <fullName>copado__CommitJobTemplate__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Select the Job Template that implements the commit action for this Pipeline</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select the Job Template that implements the commit action for this Pipeline</inlineHelpText>
+        <label>Commit Job Template</label>
+        <referenceTo>copado__JobTemplate__c</referenceTo>
+        <relationshipLabel>Pipelines (Commit Job Template)</relationshipLabel>
+        <relationshipName>Pipelines2</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>copado__Continuous_Delivery_Configuration_Json__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Continuous Delivery Configuration Json</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>copado__Continuous_Delivery_Enabled__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Continuous Delivery Enabled</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>copado__Copado_DX_Mode__c</fullName>
@@ -265,6 +313,50 @@
                 </value>
             </valueSetDefinition>
         </valueSet>
+    </fields>
+    <fields>
+        <fullName>copado__Deployment_Automation__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>List of steps to be used when deploying promoted user stories to a destination environment.</inlineHelpText>
+        <label>Deployment Automation</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>Only active automation templates are allowed</errorMessage>
+            <filterItems>
+                <field>copado__Deployment__c.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Automation Template</value>
+            </filterItems>
+            <filterItems>
+                <field>copado__Deployment__c.copado__Active__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>copado__Deployment__c</referenceTo>
+        <relationshipLabel>Pipelines (Deployment Automation)</relationshipLabel>
+        <relationshipName>DeploymentPipelines</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>copado__Deployment_Job_Template__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Deployment Job Template</label>
+        <referenceTo>copado__JobTemplate__c</referenceTo>
+        <relationshipLabel>Pipelines (Deployment Job Template)</relationshipLabel>
+        <relationshipName>Pipelines1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>copado__Disable_Validations__c</fullName>
@@ -433,8 +525,8 @@
         <deprecated>false</deprecated>
         <description>Link to open the Pipeline Manager to promote and back promote User Stories.</description>
         <externalId>false</externalId>
-        <formula>HYPERLINK(&apos;/apex/&apos;&amp;
-            IF($Setup.copado__Settings__c.copado__Namespace__c!=&apos;none&apos;,&apos;copado__&apos;, &apos;&apos;)&amp;IF( ISPICKVAL(copado__Calculate_Based_on__c, &apos;User Story&apos;), IF( copado__Active__c,&apos;PipelineManager?mode=manager&amp;id=&apos;&amp;Id, &apos;PipelineManager?mode=diagram&amp;id=&apos;&amp;Id), &apos;BranchManagement?id=&apos;&amp;Id), &apos;Pipeline Manager&apos;, IF($User.UIThemeDisplayed != &quot;Theme4d&quot;,&apos;_blank&apos;,&apos;_self&apos;))</formula>
+        <formula>HYPERLINK(&#39;/apex/&#39;&amp;
+            IF($Setup.copado__Settings__c.copado__Namespace__c!=&#39;none&#39;,&#39;copado__&#39;, &#39;&#39;)&amp;IF( ISPICKVAL(copado__Calculate_Based_on__c, &#39;User Story&#39;), IF( copado__Active__c,&#39;PipelineManager?mode=manager&amp;id=&#39;&amp;Id, &#39;PipelineManager?mode=diagram&amp;id=&#39;&amp;Id), &#39;BranchManagement?id=&#39;&amp;Id), &#39;Pipeline Manager&#39;, IF($User.UIThemeDisplayed != &quot;Theme4d&quot;,&#39;_blank&#39;,&#39;_self&#39;))</formula>
         <inlineHelpText>Link to open the Pipeline Manager to promote and back promote User Stories.</inlineHelpText>
         <label>Manage Releases</label>
         <required>false</required>
@@ -485,6 +577,75 @@ This value will prefill the order by field on related Promotion record creation 
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>copado__Platform__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Platform</label>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Salesforce</fullName>
+                    <default>true</default>
+                    <label>Salesforce</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>copado__Promotion_Automation__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>List of steps to be used when merging user stories before deployment.</inlineHelpText>
+        <label>Promotion Automation</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>Only active automation templates are allowed</errorMessage>
+            <filterItems>
+                <field>copado__Deployment__c.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Automation Template</value>
+            </filterItems>
+            <filterItems>
+                <field>copado__Deployment__c.copado__Active__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>copado__Deployment__c</referenceTo>
+        <relationshipLabel>Pipelines</relationshipLabel>
+        <relationshipName>Pipelines</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>copado__Promotion_Job_Template__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Promotion Job Template</label>
+        <referenceTo>copado__JobTemplate__c</referenceTo>
+        <relationshipLabel>Pipelines</relationshipLabel>
+        <relationshipName>Pipelines</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>copado__Static_Code_Analysis_Settings__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <deprecated>false</deprecated>
@@ -524,6 +685,11 @@ This value will prefill the order by field on related Promotion record creation 
         <customTabListAdditionalFields>copado__Manage_Branches__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>CREATED_DATE</customTabListAdditionalFields>
         <customTabListAdditionalFields>LAST_UPDATE</customTabListAdditionalFields>
+        <excludedStandardButtons>OpenListInQuip</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <excludedStandardButtons>PrintableListView</excludedStandardButtons>
+        <excludedStandardButtons>IsotopeSubscription</excludedStandardButtons>
+        <listViewButtons>copado__Pipeline_Wizard</listViewButtons>
         <lookupDialogsAdditionalFields>copado__Active__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>CREATED_DATE</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>LAST_UPDATE</lookupDialogsAdditionalFields>
@@ -562,7 +728,7 @@ This value will prefill the order by field on related Promotion record creation 
         <masterLabel>Manage Releases</masterLabel>
         <openType>noSidebar</openType>
         <protected>false</protected>
-        <url>/apex/{!IF(CONTAINS($Action.copado__User_Story__c.New, &apos;copado__&apos;), &apos;copado__&apos;, &apos;&apos;)}{!IF(ISPICKVAL(copado__Deployment_Flow__c.copado__Calculate_Based_on__c, &apos;User Story&apos;), &apos;PipelineManager&apos;,&apos;BranchManagement&apos;)}?Id={!copado__Deployment_Flow__c.Id}&amp;mode={!IF(copado__Deployment_Flow__c.copado__Active__c, &apos;manager&apos;, &apos;diagram&apos;)}</url>
+        <url>/apex/{!IF(CONTAINS($Action.copado__User_Story__c.New, &#39;copado__&#39;), &#39;copado__&#39;, &#39;&#39;)}{!IF(ISPICKVAL(copado__Deployment_Flow__c.copado__Calculate_Based_on__c, &#39;User Story&#39;), &#39;PipelineManager&#39;,&#39;BranchManagement&#39;)}?Id={!copado__Deployment_Flow__c.Id}&amp;mode={!IF(copado__Deployment_Flow__c.copado__Active__c, &#39;manager&#39;, &#39;diagram&#39;)}</url>
     </webLinks>
     <webLinks>
         <fullName>copado__Manage_Environment_Variables</fullName>
@@ -584,7 +750,18 @@ This value will prefill the order by field on related Promotion record creation 
         <masterLabel>Manage Regression Tests</masterLabel>
         <openType>replace</openType>
         <protected>false</protected>
-        <url>/apex/{!IF(CONTAINS($Action.copado__User_Story__c.New, &apos;copado__&apos;), &apos;copado__&apos;, &apos;&apos;)}ManageSeleniumTesting?regression=true&amp;flowId={!copado__Deployment_Flow__c.Id}</url>
+        <url>/apex/{!IF(CONTAINS($Action.copado__User_Story__c.New, &#39;copado__&#39;), &#39;copado__&#39;, &#39;&#39;)}ManageSeleniumTesting?regression=true&amp;flowId={!copado__Deployment_Flow__c.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>copado__Pipeline_Wizard</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>page</linkType>
+        <masterLabel>Launch Pipeline Wizard</masterLabel>
+        <openType>replace</openType>
+        <page>copado__NewPipeline</page>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
     </webLinks>
     <webLinks>
         <fullName>copado__Select_Main_Branch</fullName>
@@ -597,4 +774,40 @@ This value will prefill the order by field on related Promotion record creation 
         <page>copado__DeploymentFlowBranchSelection</page>
         <protected>false</protected>
     </webLinks>
+    <validationRules>
+        <fullName>copado__Unique_Job_Template</fullName>
+        <active>true</active>
+        <errorConditionFormula>OR(
+AND(
+NOT(ISBLANK(copado__CommitJobTemplate__c)),
+OR(
+copado__CommitJobTemplate__c == copado__Deployment_Job_Template__c,
+copado__CommitJobTemplate__c == copado__Promotion_Job_Template__c
+)),
+AND(
+NOT(ISBLANK(copado__Promotion_Job_Template__c)),
+OR(
+copado__Promotion_Job_Template__c == copado__Deployment_Job_Template__c,
+copado__Promotion_Job_Template__c == copado__CommitJobTemplate__c
+)),
+AND(
+NOT(ISBLANK(copado__Deployment_Job_Template__c)),
+OR(
+copado__Deployment_Job_Template__c == copado__Promotion_Job_Template__c,
+copado__Deployment_Job_Template__c == copado__CommitJobTemplate__c
+))
+)</errorConditionFormula>
+        <errorMessage>A pipeline cannot have the same job template for Commit, Promote and Deploy.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>copado__Unique_Template_for_promote_and_deploy</fullName>
+        <active>true</active>
+        <description>A pipeline cannot have the same template for both Promote and Deploy</description>
+        <errorConditionFormula>AND(
+  NOT(ISBLANK(copado__Promotion_Automation__c)), 
+  copado__Promotion_Automation__c ==  copado__Deployment_Automation__c
+)</errorConditionFormula>
+        <errorDisplayField>copado__Deployment_Automation__c</errorDisplayField>
+        <errorMessage>A pipeline cannot have the same template for both Promote and Deploy</errorMessage>
+    </validationRules>
 </CustomObject>

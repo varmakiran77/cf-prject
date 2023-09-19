@@ -344,18 +344,30 @@
         <columns>NAME</columns>
         <columns>copado__Project__c</columns>
         <columns>copado__Version__c</columns>
-        <columns>copado__Base_Branch__c</columns>
+        <columns>copado__Planned_Date__c</columns>
         <columns>copado__Status__c</columns>
-        <columns>copado__Description__c</columns>
+        <columns>copado__Base_Branch__c</columns>
         <filterScope>Everything</filterScope>
         <label>All</label>
+        <language>en_US</language>
     </listViews>
     <nameField>
         <label>Release Name</label>
         <type>Text</type>
     </nameField>
     <pluralLabel>Releases</pluralLabel>
-    <searchLayouts/>
+    <searchLayouts>
+        <customTabListAdditionalFields>copado__Project__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>copado__Version__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>copado__Planned_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>copado__Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>copado__Base_Branch__c</customTabListAdditionalFields>
+        <searchResultsAdditionalFields>copado__Project__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>copado__Version__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>copado__Planned_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>copado__Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>copado__Base_Branch__c</searchResultsAdditionalFields>
+    </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
     <webLinks>
@@ -367,7 +379,7 @@
         <masterLabel>Mass add to Release</masterLabel>
         <openType>replace</openType>
         <protected>false</protected>
-        <url>/apex/{!IF(CONTAINS($Action.copado__User_Story__c.New, &apos;copado__&apos;), &apos;copado__&apos;, &apos;&apos;)}MassAddToRelease?id={!copado__Release__c.Id}</url>
+        <url>/apex/{!IF(CONTAINS($Action.copado__User_Story__c.New, &#39;copado__&#39;), &#39;copado__&#39;, &#39;&#39;)}MassAddToRelease?id={!copado__Release__c.Id}</url>
     </webLinks>
     <webLinks>
         <fullName>copado__Select_Base_Branch</fullName>
@@ -380,4 +392,12 @@
         <page>copado__ReleaseBranchSelection</page>
         <protected>false</protected>
     </webLinks>
+    <validationRules>
+        <fullName>copado__Validate_spaces_in_version</fullName>
+        <active>true</active>
+        <description>Make sure no spaces are there in version field</description>
+        <errorConditionFormula>CONTAINS(copado__Version__c,&quot; &quot;)</errorConditionFormula>
+        <errorDisplayField>copado__Version__c</errorDisplayField>
+        <errorMessage>please dont include spaces in version field</errorMessage>
+    </validationRules>
 </CustomObject>

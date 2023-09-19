@@ -286,9 +286,29 @@
         <label>Custom Fields</label>
     </fieldSets>
     <fields>
+        <fullName>Module_External_Id__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>true</externalId>
+        <label>Module External Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>copado__Allow_Functions_Git_Cache__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Allow Functions Git Cache</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>copado__Branch_Base_URL__c</fullName>
         <deprecated>false</deprecated>
-        <description>This field enables Copado to create a link to the Git branches&apos; information on your provider&apos;s end.</description>
+        <description>This field enables Copado to create a link to the Git branches&#39; information on your provider&#39;s end.</description>
         <externalId>false</externalId>
         <inlineHelpText>Base URL of your Repository branches, e.g.: https://github.com/[COMPANY]/[REPOSITORY]/tree/</inlineHelpText>
         <label>Branch Base URL</label>
@@ -301,7 +321,7 @@
     <fields>
         <fullName>copado__Commit_Base_URL__c</fullName>
         <deprecated>false</deprecated>
-        <description>This field enables Copado to create a link to the Git commits&apos; information on your provider&apos;s end.</description>
+        <description>This field enables Copado to create a link to the Git commits&#39; information on your provider&#39;s end.</description>
         <externalId>false</externalId>
         <inlineHelpText>Base URL of your Repository commits, e.g.: https://github.com/[COMPANY]/[REPOSITORY]/commit/</inlineHelpText>
         <label>Commit Base URL</label>
@@ -344,6 +364,11 @@
                     <fullName>Microsoft Team Service</fullName>
                     <default>false</default>
                     <label>Microsoft Team Service</label>
+                </value>
+                <value>
+                    <fullName>Copado Version Control</fullName>
+                    <default>false</default>
+                    <label>Copado Version Control</label>
                 </value>
                 <value>
                     <fullName>Others</fullName>

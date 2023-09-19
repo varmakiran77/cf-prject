@@ -191,9 +191,9 @@
         <fullName>copado__Compliance_Rule_Group__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <deprecated>false</deprecated>
-        <description>If &apos;Compliance Check&apos; is selected as the type, what Compliance Rule Group should be run?</description>
+        <description>If &#39;Compliance Check&#39; is selected as the type, what Compliance Rule Group should be run?</description>
         <externalId>false</externalId>
-        <inlineHelpText>If &apos;Compliance Check&apos; is selected as the type, what Compliance Rule Group should be run?</inlineHelpText>
+        <inlineHelpText>If &#39;Compliance Check&#39; is selected as the type, what Compliance Rule Group should be run?</inlineHelpText>
         <label>Compliance Rule Group</label>
         <referenceTo>copado__Compliance_Rule_Group__c</referenceTo>
         <relationshipName>Quality_Gates</relationshipName>
@@ -218,9 +218,9 @@
     <fields>
         <fullName>copado__DataJSON__c</fullName>
         <deprecated>false</deprecated>
-        <description>If &apos;URL Callout&apos; is selected as the type, this stores the details of that callout.</description>
+        <description>If &#39;URL Callout&#39; is selected as the type, this stores the details of that callout.</description>
         <externalId>false</externalId>
-        <inlineHelpText>If &apos;URL Callout&apos; is selected as the type, this stores the details of that callout.</inlineHelpText>
+        <inlineHelpText>If &#39;URL Callout&#39; is selected as the type, this stores the details of that callout.</inlineHelpText>
         <label>DataJSON</label>
         <length>131072</length>
         <trackTrending>false</trackTrending>
@@ -278,9 +278,9 @@
         <fullName>copado__Manual_Task_Owner__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <deprecated>false</deprecated>
-        <description>If &apos;Manual Approval&apos;, &apos;Manual Test&apos;, or &apos;Pull Request&apos; is selected as the type, who should this task be assigned to?</description>
+        <description>If &#39;Manual Approval&#39;, &#39;Manual Test&#39;, or &#39;Pull Request&#39; is selected as the type, who should this task be assigned to?</description>
         <externalId>false</externalId>
-        <inlineHelpText>If &apos;Manual Approval&apos;, &apos;Manual Test&apos;, or &apos;Pull Request&apos; is selected as the type, who should this task be assigned to?</inlineHelpText>
+        <inlineHelpText>If &#39;Manual Approval&#39;, &#39;Manual Test&#39;, or &#39;Pull Request&#39; is selected as the type, who should this task be assigned to?</inlineHelpText>
         <label>Manual Task Owner</label>
         <referenceTo>User</referenceTo>
         <relationshipName>Quality_Gates</relationshipName>
@@ -294,7 +294,7 @@
         <deprecated>false</deprecated>
         <description>What metadata will trigger this Quality Gate to run? Quality Gates will only run on deployments where the metadata matches that the metadata in this group</description>
         <externalId>false</externalId>
-        <inlineHelpText>What metadata will trigger this Quality Gate to run? Quality Gates will only run on deployments where the metadata matches that the metadata in this group</inlineHelpText>
+        <inlineHelpText>Automations and Quality Gates will be executed when the metadata deployed or committed matches the one specified here.</inlineHelpText>
         <label>Metadata Group</label>
         <referenceTo>copado__Metadata_Group__c</referenceTo>
         <relationshipLabel>Automations</relationshipLabel>
@@ -306,9 +306,9 @@
     <fields>
         <fullName>copado__Score_Threshold__c</fullName>
         <deprecated>false</deprecated>
-        <description>If &apos;Static Code Analysis&apos; is selected as the type, what static analysis score should be considered passing?</description>
+        <description>If &#39;Static Code Analysis&#39; is selected as the type, what static analysis score should be considered passing?</description>
         <externalId>false</externalId>
-        <inlineHelpText>If &apos;Static Code Analysis&apos; is selected as the type, what static analysis score should be considered passing?</inlineHelpText>
+        <inlineHelpText>If &#39;Static Code Analysis&#39; is selected as the type, what static analysis score should be considered passing?</inlineHelpText>
         <label>Static Analysis Score Threshold</label>
         <precision>18</precision>
         <required>false</required>
@@ -321,9 +321,9 @@
         <fullName>copado__Selenium_Test_Group__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <deprecated>false</deprecated>
-        <description>If &apos;Selenium Test&apos; is selected as the type, what Selenium Test Group should be run?</description>
+        <description>If &#39;Selenium Test&#39; is selected as the type, what Selenium Test Group should be run?</description>
         <externalId>false</externalId>
-        <inlineHelpText>If &apos;Selenium Test&apos; is selected as the type, what Selenium Test Group should be run?</inlineHelpText>
+        <inlineHelpText>If &#39;Selenium Test&#39; is selected as the type, what Selenium Test Group should be run?</inlineHelpText>
         <label>Selenium Test Group</label>
         <referenceTo>copado__Selenium_Test_Group__c</referenceTo>
         <relationshipName>Quality_Gates</relationshipName>
@@ -335,9 +335,9 @@
         <fullName>copado__Static_Code_Analysis_Settings__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <deprecated>false</deprecated>
-        <description>If &apos;Static Code Analysis&apos; is selected as the type, which static analysis settings should be used?</description>
+        <description>If &#39;Static Code Analysis&#39; is selected as the type, which static analysis settings should be used?</description>
         <externalId>false</externalId>
-        <inlineHelpText>If &apos;Static Code Analysis&apos; is selected as the type, which static analysis settings should be used?</inlineHelpText>
+        <inlineHelpText>If &#39;Static Code Analysis&#39; is selected as the type, which static analysis settings should be used?</inlineHelpText>
         <label>Static Code Analysis Settings</label>
         <referenceTo>copado__Static_Code_Analysis_Settings__c</referenceTo>
         <relationshipName>Quality_Gates</relationshipName>
@@ -348,9 +348,9 @@
     <fields>
         <fullName>copado__Test_Level__c</fullName>
         <deprecated>false</deprecated>
-        <description>If &apos;Apex Test with Validation&apos; is selected as the type, what test level should be performed. &apos;Run Specified Tests&apos; will run whatever tests are included on the user stories being deployed</description>
+        <description>If &#39;Apex Test with Validation&#39; is selected as the type, what test level should be performed. &#39;Run Specified Tests&#39; will run whatever tests are included on the user stories being deployed</description>
         <externalId>false</externalId>
-        <inlineHelpText>If &apos;Apex Test with Validation&apos; is selected as the type, what test level should be performed. &apos;Run Specified Tests&apos; will run whatever tests are included on the user stories being deployed</inlineHelpText>
+        <inlineHelpText>If &#39;Apex Test with Validation&#39; is selected as the type, what test level should be performed. &#39;Run Specified Tests&#39; will run whatever tests are included on the user stories being deployed</inlineHelpText>
         <label>Apex Test Level</label>
         <required>false</required>
         <trackTrending>false</trackTrending>
@@ -359,6 +359,19 @@
             <restricted>true</restricted>
             <valueSetName>copado__Test_Level</valueSetName>
         </valueSet>
+    </fields>
+    <fields>
+        <fullName>copado__Test__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Test</label>
+        <referenceTo>copado__Test__c</referenceTo>
+        <relationshipLabel>Automations</relationshipLabel>
+        <relationshipName>Automations</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
     </fields>
     <fields>
         <fullName>copado__Type__c</fullName>
@@ -381,7 +394,7 @@
         <type>Text</type>
     </nameField>
     <pluralLabel>Automations</pluralLabel>
-    <searchLayouts/>
+    <searchLayouts />
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>

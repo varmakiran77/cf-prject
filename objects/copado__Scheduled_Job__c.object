@@ -206,7 +206,7 @@
         <deleteConstraint>SetNull</deleteConstraint>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
-        <inlineHelpText>This User must have a Copado License assigned, created an Org credential for his Copado user and created API Key. This API Key will be used for the webhooks.</inlineHelpText>
+        <inlineHelpText>This User must have a Copado License assigned, created an credential for his Copado user and created API Key. This API Key will be used for the webhooks.</inlineHelpText>
         <label>Run as User</label>
         <referenceTo>User</referenceTo>
         <relationshipName>Scheduled_Jobs</relationshipName>
@@ -264,7 +264,7 @@
         <type>Text</type>
     </nameField>
     <pluralLabel>Scheduled Jobs</pluralLabel>
-    <searchLayouts/>
+    <searchLayouts />
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>

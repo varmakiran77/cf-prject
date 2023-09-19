@@ -5,13 +5,13 @@
     <standardValue>
         <fullName>Draft</fullName>
         <default>false</default>
-        <label>Draft</label>
+        <label>Borrador</label>
         <groupingString>Draft</groupingString>
     </standardValue>
     <standardValue>
         <fullName>Activated</fullName>
         <default>false</default>
-        <label>Activated</label>
+        <label>Activado</label>
         <groupingString>Activated</groupingString>
     </standardValue>
 </StandardValueSet>

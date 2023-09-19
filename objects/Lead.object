@@ -289,6 +289,11 @@
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
+        <fullName>GenderIdentity</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
         <fullName>HasOptedOutOfEmail</fullName>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
@@ -340,6 +345,11 @@
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
+        <fullName>Pronouns</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
         <fullName>Rating</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Picklist</type>
@@ -351,7 +361,7 @@
     </fields>
     <fields>
         <fullName>TIMBASURVEYS__SurveyReminder__c</fullName>
-        <defaultValue>&apos;&apos;</defaultValue>
+        <defaultValue>&#39;&#39;</defaultValue>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>SurveyReminder</label>
@@ -394,7 +404,7 @@
         <filters>
             <field>LEAD.STATUS</field>
             <operation>notEqual</operation>
-            <value>Qualified</value>
+            <value>Habilitado</value>
         </filters>
         <label>All Open Leads</label>
     </listViews>
@@ -432,7 +442,7 @@
             <operation>equals</operation>
             <value>TODAY</value>
         </filters>
-        <label>Today&apos;s Leads</label>
+        <label>Today&#39;s Leads</label>
     </listViews>
     <searchLayouts>
         <customTabListAdditionalFields>FULL_NAME</customTabListAdditionalFields>
@@ -465,13 +475,13 @@
         <height>600</height>
         <isResizable>true</isResizable>
         <linkType>url</linkType>
-        <masterLabel>Altavista News</masterLabel>
+        <masterLabel>Noticias de Altavista</masterLabel>
         <openType>newWindow</openType>
         <position>none</position>
         <protected>false</protected>
         <showsLocation>true</showsLocation>
         <showsStatus>true</showsStatus>
-        <url>http://news.altavista.com/search?nc=0&amp;q={!Lead_Company}</url>
+        <url>http://news.altavista.com/search?nc=0&amp;q={!Lead.Company}</url>
     </webLinks>
     <webLinks>
         <fullName>GoogleMaps</fullName>
@@ -484,13 +494,13 @@
         <height>600</height>
         <isResizable>true</isResizable>
         <linkType>url</linkType>
-        <masterLabel>Google Maps</masterLabel>
+        <masterLabel>Mapas de Google</masterLabel>
         <openType>newWindow</openType>
         <position>none</position>
         <protected>false</protected>
         <showsLocation>false</showsLocation>
         <showsStatus>false</showsStatus>
-        <url>http://maps.google.com/maps?f=q&amp;hl=en&amp;q={!Lead_Street}+{!Lead_City}+{!Lead_State}&amp;om=1</url>
+        <url>http://maps.google.com/maps?f=q&amp;hl=en&amp;q={!Lead.Street}+{!Lead.City}+{!Lead.State}&amp;om=1</url>
     </webLinks>
     <webLinks>
         <fullName>GoogleNews</fullName>
@@ -503,13 +513,13 @@
         <height>600</height>
         <isResizable>true</isResizable>
         <linkType>url</linkType>
-        <masterLabel>Google News</masterLabel>
+        <masterLabel>Noticias de Google</masterLabel>
         <openType>newWindow</openType>
         <position>none</position>
         <protected>false</protected>
         <showsLocation>false</showsLocation>
         <showsStatus>false</showsStatus>
-        <url>http://www.google.com/news?&amp;q={!Lead_Company}&amp;btnG=Search+News</url>
+        <url>http://www.google.com/news?&amp;q={!Lead.Company}&amp;btnG=Search+News</url>
     </webLinks>
     <webLinks>
         <fullName>GoogleSearch</fullName>
@@ -522,13 +532,13 @@
         <height>600</height>
         <isResizable>true</isResizable>
         <linkType>url</linkType>
-        <masterLabel>Google Search</masterLabel>
+        <masterLabel>Búsqueda en Google</masterLabel>
         <openType>newWindow</openType>
         <position>none</position>
         <protected>false</protected>
         <showsLocation>false</showsLocation>
         <showsStatus>false</showsStatus>
-        <url>http://www.google.com/search?q={!Lead_Company}</url>
+        <url>http://www.google.com/search?q={!Lead.Company}</url>
     </webLinks>
     <webLinks>
         <fullName>HooversProfile</fullName>
@@ -541,13 +551,13 @@
         <height>600</height>
         <isResizable>true</isResizable>
         <linkType>url</linkType>
-        <masterLabel>Hoovers Profile</masterLabel>
+        <masterLabel>Perfil de Hoovers</masterLabel>
         <openType>newWindow</openType>
         <position>none</position>
         <protected>false</protected>
         <showsLocation>true</showsLocation>
         <showsStatus>true</showsStatus>
-        <url>http://search.hoovers.com/cgi-bin/hol_search?which=company&amp;query_string={!Lead_Company}</url>
+        <url>http://search.hoovers.com/cgi-bin/hol_search?which=company&amp;query_string={!Lead.Company}</url>
     </webLinks>
     <webLinks>
         <fullName>SendGmail</fullName>
@@ -560,13 +570,13 @@
         <height>600</height>
         <isResizable>true</isResizable>
         <linkType>url</linkType>
-        <masterLabel>Send Gmail</masterLabel>
+        <masterLabel>Enviar a Gmail</masterLabel>
         <openType>newWindow</openType>
         <position>none</position>
         <protected>false</protected>
         <showsLocation>false</showsLocation>
         <showsStatus>false</showsStatus>
-        <url>https://mail.google.com/mail?view=cm&amp;tf=0&amp;to={!Lead_Email}&lt;{!Lead_LastName}, {!Lead_FirstName}&gt;&amp;tf=1</url>
+        <url>https://mail.google.com/mail?view=cm&amp;tf=0&amp;to={!Lead.Email}&lt;{!Lead.LastName}, {!Lead.FirstName}&gt;&amp;tf=1</url>
     </webLinks>
     <webLinks>
         <fullName>TIMBASURVEYS__Send_Survey_Lead_Detail</fullName>
@@ -576,9 +586,9 @@
         <masterLabel>Send Survey Lead Detail</masterLabel>
         <openType>onClickJavaScript</openType>
         <protected>false</protected>
-        <url>var email_field = &apos;{!JSENCODE(Lead.Email)}&apos;; 
+        <url>var email_field = &#39;{!JSENCODE(Lead.Email)}&#39;; 
 if(!email_field){
-alert(&apos;The email address for this Lead has not yet been set.&apos;); 
+alert(&#39;The email address for this Lead has not yet been set.&#39;); 
 }else{ 
 window.location = &quot;/apex/timbasurveys__collectionhub?lIds={!URLENCODE(Lead.Id)}&amp;retURL=&quot; + encodeURIComponent(window.location);
 }</url>
@@ -610,7 +620,7 @@ var currentlocation = (window.location.pathname).toString() ;
 var Lead= {!GETRECORDIDS( $ObjectType.Lead)};
 
 if(Lead.length &gt; 0 ){ 
-if(currentlocation.indexOf(&apos;apex&apos;) &gt; -1){ 
+if(currentlocation.indexOf(&#39;apex&#39;) &gt; -1){ 
 if(window.parent != null ){ 
 if(window.parent.Lead!=undefined){ 
 window.parent.Lead=Lead; 
@@ -625,7 +635,7 @@ window.parent.Lead=Lead;
 window.location = &quot;/apex/timbasurveys__collectionhub?lIds={!URLENCODE(Lead.Id)}&amp;retURL=&quot; + encodeURIComponent(window.location);
 } 
 } else { 
-alert(&apos;Only 50 invitations can be sent from standard Lead list&apos;); 
+alert(&#39;Only 50 invitations can be sent from standard Lead list&#39;); 
 } 
 } 
 }</url>
@@ -641,12 +651,12 @@ alert(&apos;Only 50 invitations can be sent from standard Lead list&apos;);
         <height>600</height>
         <isResizable>true</isResizable>
         <linkType>url</linkType>
-        <masterLabel>Yahoo Maps</masterLabel>
+        <masterLabel>Mapas de Yahoo!</masterLabel>
         <openType>newWindow</openType>
         <position>none</position>
         <protected>false</protected>
         <showsLocation>true</showsLocation>
         <showsStatus>true</showsStatus>
-        <url>http://maps.yahoo.com/py/maps.py?cn={!Lead_Country}&amp;csz={!Lead_City}+{!Lead_State}+{!Lead_PostalCode}+&amp;addr={!Lead_Address}</url>
+        <url>http://maps.yahoo.com/py/maps.py?cn={!Lead.Country}&amp;csz={!Lead.City}+{!Lead.State}+{!Lead.PostalCode}+&amp;addr={!Lead.Street}</url>
     </webLinks>
 </CustomObject>

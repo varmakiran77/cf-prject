@@ -141,7 +141,7 @@
         <type>Default</type>
     </actionOverrides>
     <allowInChatterGroups>false</allowInChatterGroups>
-    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <compactLayoutAssignment>copado__User_Story_Dependency_Compact_Layout</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
     <deprecated>false</deprecated>
     <enableActivities>false</enableActivities>
@@ -154,6 +154,20 @@
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>copado__Child_User_Story_Release__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Child User Story Release</label>
+        <referenceTo>copado__Release__c</referenceTo>
+        <relationshipLabel>User Story Dependencies (Child User Story Release)</relationshipLabel>
+        <relationshipName>User_Story_Dependencies</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
     <fields>
         <fullName>copado__Child_User_Story_Status__c</fullName>
         <deprecated>false</deprecated>
@@ -240,7 +254,7 @@
         <description>The Team that is dependent on another team to provide the User Story.</description>
         <externalId>false</externalId>
         <inlineHelpText>The Team that is dependent on another team to provide the User Story.</inlineHelpText>
-        <label>Dependent Team</label>
+        <label>Child User Story Team</label>
         <referenceTo>copado__Team__c</referenceTo>
         <relationshipLabel>User Story Dependencies (Dependent Team)</relationshipLabel>
         <relationshipName>Team_Dependencies_For_Team</relationshipName>
@@ -308,7 +322,7 @@
         <description>The team that will provide the deliverable to fulfill this dependency.</description>
         <externalId>false</externalId>
         <inlineHelpText>The team that will provide the deliverable to fulfill this dependency.</inlineHelpText>
-        <label>Provider Team</label>
+        <label>Parent User Story Team</label>
         <referenceTo>copado__Team__c</referenceTo>
         <relationshipLabel>User Story Dependencies (Provider Team)</relationshipLabel>
         <relationshipName>Team_Dependencies_On_Team</relationshipName>
@@ -334,12 +348,49 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>copado__Relationship_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the value for the Parent-Child relationship type for your User Stories. By default, the field value is set to &quot;Relates-to.&quot; You can add other values, as this is an unrestricted list.</inlineHelpText>
+        <label>Relationship Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>relates to</fullName>
+                    <default>true</default>
+                    <label>relates to</label>
+                </value>
+                <value>
+                    <fullName>duplicating</fullName>
+                    <default>false</default>
+                    <label>duplicating</label>
+                </value>
+                <value>
+                    <fullName>blocking</fullName>
+                    <default>false</default>
+                    <label>blocking</label>
+                </value>
+                <value>
+                    <fullName>fixing</fullName>
+                    <default>false</default>
+                    <label>fixing</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>copado__Release__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
-        <label>Release</label>
+        <label>Parent User Story Release</label>
         <referenceTo>copado__Release__c</referenceTo>
+        <relationshipLabel>User Story Dependencies</relationshipLabel>
         <relationshipName>Team_Dependencies</relationshipName>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -350,7 +401,7 @@
         <fullName>copado__Skip_Dependency__c</fullName>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
-        <formula>OR( ISPICKVAL( copado__Dependency_Status__c ,&apos;Completed&apos;), ISPICKVAL( copado__Dependency_Status__c ,&apos;Deferred&apos;), ISPICKVAL( copado__Dependency_Status__c ,&apos;Never&apos;))</formula>
+        <formula>OR( ISPICKVAL( copado__Dependency_Status__c ,&#39;Completed&#39;), ISPICKVAL( copado__Dependency_Status__c ,&#39;Deferred&#39;), ISPICKVAL( copado__Dependency_Status__c ,&#39;Never&#39;))</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <label>Skip Dependency</label>
         <trackHistory>false</trackHistory>
@@ -361,17 +412,25 @@
     <listViews>
         <fullName>copado__All</fullName>
         <columns>NAME</columns>
-        <columns>copado__Deliverable__c</columns>
+        <columns>copado__Provider_User_Story__c</columns>
+        <columns>copado__Parent_User_Story_Status__c</columns>
+        <columns>copado__Dependent_User_Story__c</columns>
+        <columns>copado__Child_User_Story_Status__c</columns>
         <columns>copado__Dependency_Status__c</columns>
-        <columns>copado__Needed_by_Date__c</columns>
         <columns>copado__Dependent_Team__c</columns>
         <columns>copado__Provider_Team__c</columns>
-        <columns>copado__Dependent_User_Story__c</columns>
-        <columns>copado__Provider_User_Story__c</columns>
         <filterScope>Everything</filterScope>
         <label>All</label>
         <language>en_US</language>
     </listViews>
+    <compactLayouts>
+        <fullName>copado__User_Story_Dependency_Compact_Layout</fullName>
+        <fields>Name</fields>
+        <fields>copado__Provider_User_Story__c</fields>
+        <fields>copado__Relationship_Type__c</fields>
+        <fields>copado__Dependent_User_Story__c</fields>
+        <label>User Story Dependency Compact Layout</label>
+    </compactLayouts>
     <nameField>
         <displayFormat>UD-{0000000}</displayFormat>
         <label>User Story Dependency Name</label>
@@ -380,12 +439,13 @@
     </nameField>
     <pluralLabel>User Story Dependencies</pluralLabel>
     <searchLayouts>
-        <customTabListAdditionalFields>copado__Deliverable__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>copado__Provider_User_Story__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>copado__Parent_User_Story_Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>copado__Dependent_User_Story__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>copado__Child_User_Story_Status__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>copado__Dependency_Status__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>copado__Dependent_Team__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>copado__Provider_Team__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>copado__Dependent_User_Story__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>copado__Provider_User_Story__c</customTabListAdditionalFields>
         <lookupDialogsAdditionalFields>copado__Provider_User_Story__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>copado__Parent_User_Story_Status__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>copado__Dependent_User_Story__c</lookupDialogsAdditionalFields>
@@ -406,12 +466,13 @@
         <searchFilterFields>copado__Dependent_Team__c</searchFilterFields>
         <searchFilterFields>copado__Dependency_Status__c</searchFilterFields>
         <searchFilterFields>copado__Release__c</searchFilterFields>
-        <searchResultsAdditionalFields>copado__Deliverable__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>copado__Provider_User_Story__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>copado__Parent_User_Story_Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>copado__Dependent_User_Story__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>copado__Child_User_Story_Status__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>copado__Dependency_Status__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>copado__Dependent_Team__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>copado__Provider_Team__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>copado__Dependent_User_Story__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>copado__Provider_User_Story__c</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>

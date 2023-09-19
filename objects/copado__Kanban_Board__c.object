@@ -284,6 +284,19 @@
         <type>LongTextArea</type>
         <visibleLines>3</visibleLines>
     </fields>
+    <fields>
+        <fullName>copado__Sprint__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Sprint</label>
+        <referenceTo>copado__Sprint__c</referenceTo>
+        <relationshipLabel>Kanban Boards</relationshipLabel>
+        <relationshipName>Kanban_Boards</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
     <label>Kanban Board</label>
     <listViews>
         <fullName>copado__All</fullName>
@@ -301,8 +314,9 @@
     </nameField>
     <pluralLabel>Kanban Boards</pluralLabel>
     <searchLayouts>
-        <customTabListAdditionalFields>copado__Description__c</customTabListAdditionalFields>
-        <customTabListAdditionalFields>CREATEDBY_USER</customTabListAdditionalFields>
+        <customTabListAdditionalFields>copado__Field_to_read_update__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>OWNER.ALIAS</customTabListAdditionalFields>
+        <customTabListAdditionalFields>LAST_UPDATE</customTabListAdditionalFields>
         <lookupDialogsAdditionalFields>copado__Description__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>CREATEDBY_USER</lookupDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>copado__Description__c</lookupPhoneDialogsAdditionalFields>
@@ -311,10 +325,9 @@
         <searchFilterFields>OWNER.ALIAS</searchFilterFields>
         <searchFilterFields>UPDATEDBY_USER.ALIAS</searchFilterFields>
         <searchFilterFields>CREATEDBY_USER</searchFilterFields>
-        <searchResultsAdditionalFields>copado__Description__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>copado__Field_to_read_update__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>OWNER.ALIAS</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>CREATEDBY_USER.ALIAS</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>UPDATEDBY_USER.ALIAS</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>LAST_UPDATE</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>

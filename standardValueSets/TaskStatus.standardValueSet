@@ -4,31 +4,31 @@
     <standardValue>
         <fullName>Not Started</fullName>
         <default>true</default>
-        <label>Not Started</label>
+        <label>No iniciada</label>
         <closed>false</closed>
     </standardValue>
     <standardValue>
         <fullName>In Progress</fullName>
         <default>false</default>
-        <label>In Progress</label>
+        <label>En curso</label>
         <closed>false</closed>
     </standardValue>
     <standardValue>
         <fullName>Completed</fullName>
         <default>false</default>
-        <label>Completed</label>
+        <label>Completada</label>
         <closed>true</closed>
     </standardValue>
     <standardValue>
         <fullName>Waiting on someone else</fullName>
         <default>false</default>
-        <label>Waiting on someone else</label>
+        <label>Esperando a otra persona</label>
         <closed>false</closed>
     </standardValue>
     <standardValue>
         <fullName>Deferred</fullName>
         <default>false</default>
-        <label>Deferred</label>
+        <label>Diferida</label>
         <closed>false</closed>
     </standardValue>
 </StandardValueSet>

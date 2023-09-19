@@ -4,12 +4,12 @@
     <standardValue>
         <fullName>Advertisement</fullName>
         <default>true</default>
-        <label>Advertisement</label>
+        <label>Publicidad</label>
     </standardValue>
     <standardValue>
         <fullName>Email</fullName>
         <default>false</default>
-        <label>Email</label>
+        <label>Correo electrónico</label>
     </standardValue>
     <standardValue>
         <fullName>Telemarketing</fullName>
@@ -19,31 +19,31 @@
     <standardValue>
         <fullName>Banner Ads</fullName>
         <default>false</default>
-        <label>Banner Ads</label>
+        <label>Publicidad en forma de anuncios</label>
     </standardValue>
     <standardValue>
         <fullName>Seminar / Conference</fullName>
         <default>false</default>
-        <label>Seminar / Conference</label>
+        <label>Seminario / Congreso</label>
     </standardValue>
     <standardValue>
         <fullName>Public Relations</fullName>
         <default>false</default>
-        <label>Public Relations</label>
+        <label>Relaciones públicas</label>
     </standardValue>
     <standardValue>
         <fullName>Partners</fullName>
         <default>false</default>
-        <label>Partners</label>
+        <label>Socios</label>
     </standardValue>
     <standardValue>
         <fullName>Referral Program</fullName>
         <default>false</default>
-        <label>Referral Program</label>
+        <label>Programa de referencias</label>
     </standardValue>
     <standardValue>
         <fullName>Other</fullName>
         <default>false</default>
-        <label>Other</label>
+        <label>Otros</label>
     </standardValue>
 </StandardValueSet>

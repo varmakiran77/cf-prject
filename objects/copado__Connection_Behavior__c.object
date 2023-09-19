@@ -186,6 +186,11 @@
                     <default>true</default>
                     <label>Manual</label>
                 </value>
+                <value>
+                    <fullName>Disabled</fullName>
+                    <default>false</default>
+                    <label>Disabled</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>
@@ -239,6 +244,16 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>copado__DisableEnvironmentBranch__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Disable Environment Branch</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>copado__Execute_back_promotions_in_parallel__c</fullName>
@@ -352,15 +367,15 @@
         <deprecated>false</deprecated>
         <description>An action link to schedule back-promotions</description>
         <externalId>false</externalId>
-        <formula>IF($Setup.copado__Settings__c.copado__Namespace__c != &apos;none&apos;,
+        <formula>IF($Setup.copado__Settings__c.copado__Namespace__c != &#39;none&#39;,
 IF(
-TEXT(copado__Back_Promotion_Behavior__c) == &apos;Scheduled&apos;, 
-HYPERLINK(&quot;/apex/copado__ScheduleConnectionBehavior?id=&quot; + Id + &quot;&amp;promotionType=Back_Promotion&quot;, IF(   ISBLANK(copado__Back_Promotion_Schedule__c), &quot;Schedule Back-Promotion&quot;, copado__Back_Promotion_Schedule__c),&apos;_self&apos;),
-&apos;&apos;),
+TEXT(copado__Back_Promotion_Behavior__c) == &#39;Scheduled&#39;, 
+HYPERLINK(&quot;/apex/copado__ScheduleConnectionBehavior?id=&quot; + Id + &quot;&amp;promotionType=Back_Promotion&quot;, IF(   ISBLANK(copado__Back_Promotion_Schedule__c), &quot;Schedule Back-Promotion&quot;, copado__Back_Promotion_Schedule__c),&#39;_self&#39;),
+&#39;&#39;),
 IF(
-TEXT(copado__Back_Promotion_Behavior__c) == &apos;Scheduled&apos;, 
-HYPERLINK(&quot;/apex/ScheduleConnectionBehavior?id=&quot; + Id + &quot;&amp;promotionType=Back_Promotion&quot;, IF(   ISBLANK(copado__Back_Promotion_Schedule__c), &quot;Schedule Back-Promotion&quot;, copado__Back_Promotion_Schedule__c),&apos;_self&apos;),
-&apos;&apos;)
+TEXT(copado__Back_Promotion_Behavior__c) == &#39;Scheduled&#39;, 
+HYPERLINK(&quot;/apex/ScheduleConnectionBehavior?id=&quot; + Id + &quot;&amp;promotionType=Back_Promotion&quot;, IF(   ISBLANK(copado__Back_Promotion_Schedule__c), &quot;Schedule Back-Promotion&quot;, copado__Back_Promotion_Schedule__c),&#39;_self&#39;),
+&#39;&#39;)
 )</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <inlineHelpText>An action link to schedule back-promotions</inlineHelpText>
@@ -376,13 +391,13 @@ HYPERLINK(&quot;/apex/ScheduleConnectionBehavior?id=&quot; + Id + &quot;&amp;pro
         <deprecated>false</deprecated>
         <description>An action link to schedule deployments</description>
         <externalId>false</externalId>
-        <formula>IF($Setup.copado__Settings__c.copado__Namespace__c != &apos;none&apos;,
+        <formula>IF($Setup.copado__Settings__c.copado__Namespace__c != &#39;none&#39;,
 IF(
-TEXT(copado__Promotion_Behavior__c) == &apos;Scheduled&apos;, HYPERLINK(&quot;/apex/copado__ScheduleConnectionBehavior?id=&quot; + Id + &quot;&amp;promotionType=Promotion&quot;,  IF( ISBLANK(copado__Promotion_Schedule__c) , &quot;Schedule Promotions&quot;, copado__Promotion_Schedule__c) ,&apos;_self&apos;),
-&apos;&apos;),
+TEXT(copado__Promotion_Behavior__c) == &#39;Scheduled&#39;, HYPERLINK(&quot;/apex/copado__ScheduleConnectionBehavior?id=&quot; + Id + &quot;&amp;promotionType=Promotion&quot;,  IF( ISBLANK(copado__Promotion_Schedule__c) , &quot;Schedule Promotions&quot;, copado__Promotion_Schedule__c) ,&#39;_self&#39;),
+&#39;&#39;),
 IF(
-TEXT(copado__Promotion_Behavior__c) == &apos;Scheduled&apos;, HYPERLINK(&quot;/apex/ScheduleConnectionBehavior?id=&quot; + Id + &quot;&amp;promotionType=Promotion&quot;, IF( ISBLANK(copado__Promotion_Schedule__c) , &quot;Schedule Promotions&quot;, copado__Promotion_Schedule__c) ,&apos;_self&apos;),
-&apos;&apos;)
+TEXT(copado__Promotion_Behavior__c) == &#39;Scheduled&#39;, HYPERLINK(&quot;/apex/ScheduleConnectionBehavior?id=&quot; + Id + &quot;&amp;promotionType=Promotion&quot;, IF( ISBLANK(copado__Promotion_Schedule__c) , &quot;Schedule Promotions&quot;, copado__Promotion_Schedule__c) ,&#39;_self&#39;),
+&#39;&#39;)
 )</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <inlineHelpText>An action link to schedule deployments</inlineHelpText>
@@ -426,7 +441,7 @@ TEXT(copado__Promotion_Behavior__c) == &apos;Scheduled&apos;, HYPERLINK(&quot;/a
         <type>Text</type>
     </nameField>
     <pluralLabel>Connection Behaviors</pluralLabel>
-    <searchLayouts/>
+    <searchLayouts />
     <sharingModel>ReadWrite</sharingModel>
     <validationRules>
         <fullName>copado__Batch_Size_Valid_Interval</fullName>

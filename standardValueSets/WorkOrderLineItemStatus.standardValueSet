@@ -44,10 +44,4 @@
         <label>Canceled</label>
         <groupingString>Canceled</groupingString>
     </standardValue>
-    <standardValue>
-        <fullName>Demo Status</fullName>
-        <default>false</default>
-        <label>Demo Status</label>
-        <groupingString>New</groupingString>
-    </standardValue>
 </StandardValueSet>

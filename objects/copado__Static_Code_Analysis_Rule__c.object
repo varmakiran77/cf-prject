@@ -447,7 +447,7 @@
         <externalId>false</externalId>
         <label>Rule Reference</label>
         <length>255</length>
-        <required>false</required>
+        <required>true</required>
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
@@ -473,7 +473,7 @@
         <type>AutoNumber</type>
     </nameField>
     <pluralLabel>Static Code Analysis Rules</pluralLabel>
-    <searchLayouts/>
+    <searchLayouts />
     <sharingModel>ControlledByParent</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>

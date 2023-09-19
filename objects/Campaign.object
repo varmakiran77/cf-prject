@@ -325,13 +325,13 @@
         <height>500</height>
         <isResizable>true</isResizable>
         <linkType>url</linkType>
-        <masterLabel>View All Campaign Members</masterLabel>
+        <masterLabel>Ver todos los miembros de la campaña</masterLabel>
         <openType>newWindow</openType>
         <position>none</position>
         <protected>false</protected>
         <showsLocation>false</showsLocation>
         <showsStatus>false</showsStatus>
-        <url>/camp/rptcmpgncalldown.jsp?scope=1&amp;scopeid={!Campaign_Name}</url>
+        <url>/camp/rptcmpgncalldown.jsp?scope=1&amp;scopeid={!Campaign.Name}</url>
         <width>500</width>
     </webLinks>
     <webLinks>

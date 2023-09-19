@@ -141,10 +141,10 @@
         <type>Default</type>
     </actionOverrides>
     <allowInChatterGroups>false</allowInChatterGroups>
-    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <compactLayoutAssignment>copado__Feature_Highlight_Panel</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
     <deprecated>false</deprecated>
-    <description>Copado&apos;s Feature object enables you to manage Features related to User Stories &amp; Applications. Features are made up of multiple User Stories.</description>
+    <description>Copado&#39;s Feature object enables you to manage Features related to User Stories &amp; Applications. Features are made up of multiple User Stories.</description>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
     <enableFeeds>false</enableFeeds>
@@ -289,7 +289,6 @@
         <fullName>copado__Status__c</fullName>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
-        <inlineHelpText>Status of Feature</inlineHelpText>
         <label>Status</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -395,16 +394,47 @@
     <label>Feature</label>
     <listViews>
         <fullName>copado__All</fullName>
+        <columns>NAME</columns>
+        <columns>copado__Status__c</columns>
+        <columns>copado__Priority__c</columns>
+        <columns>copado__Epic__c</columns>
+        <columns>copado__Application__c</columns>
+        <columns>copado__Product_Owner__c</columns>
+        <columns>copado__Architect__c</columns>
         <filterScope>Everything</filterScope>
         <label>All</label>
+        <language>en_US</language>
     </listViews>
+    <compactLayouts>
+        <fullName>copado__Feature_Highlight_Panel</fullName>
+        <fields>Name</fields>
+        <fields>copado__Status__c</fields>
+        <fields>copado__Application__c</fields>
+        <fields>copado__Epic__c</fields>
+        <fields>copado__Product_Owner__c</fields>
+        <fields>copado__Priority__c</fields>
+        <label>Feature Highlight Panel</label>
+    </compactLayouts>
     <nameField>
         <label>Feature Name</label>
         <trackHistory>false</trackHistory>
         <type>Text</type>
     </nameField>
     <pluralLabel>Features</pluralLabel>
-    <searchLayouts/>
+    <searchLayouts>
+        <customTabListAdditionalFields>copado__Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>copado__Priority__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>copado__Epic__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>copado__Application__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>copado__Product_Owner__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>copado__Architect__c</customTabListAdditionalFields>
+        <searchResultsAdditionalFields>copado__Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>copado__Priority__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>copado__Epic__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>copado__Application__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>copado__Product_Owner__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>copado__Architect__c</searchResultsAdditionalFields>
+    </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>

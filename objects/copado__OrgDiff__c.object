@@ -249,10 +249,10 @@
         <deleteConstraint>SetNull</deleteConstraint>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
-        <inlineHelpText>Select the Source Org for which you would like to compare the Metadata. This Org will be the Org from which you would like to migrate Metadata.</inlineHelpText>
-        <label>Source Org</label>
+        <inlineHelpText>Select the Source Credential for which you would like to compare the Metadata. This Credential will be the Credential from which you would like to migrate Metadata.</inlineHelpText>
+        <label>Source Credential</label>
         <referenceTo>copado__Org__c</referenceTo>
-        <relationshipLabel>Org Differences (From Org)</relationshipLabel>
+        <relationshipLabel>Org Differences (Source Credential)</relationshipLabel>
         <relationshipName>FromOrgDiffs</relationshipName>
         <required>false</required>
         <trackTrending>false</trackTrending>
@@ -296,10 +296,10 @@
         <deleteConstraint>SetNull</deleteConstraint>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
-        <inlineHelpText>Select the Destination Org for which you would like to compare the Metadata and would like to migrate Metadata to. The resulting grid will show a list of differences with &apos;create&apos;, &apos;update&apos; and &apos;delete&apos; which apply to this Org.</inlineHelpText>
-        <label>Destination Org</label>
+        <inlineHelpText>Select the Destination Credential for which you would like to compare the Metadata and would like to migrate Metadata to. The resulting grid will show a list of differences with &#39;create&#39;, &#39;update&#39; and &#39;delete&#39; which apply to this Credential.</inlineHelpText>
+        <label>Destination Credential</label>
         <referenceTo>copado__Org__c</referenceTo>
-        <relationshipLabel>Org Differences (To Org)</relationshipLabel>
+        <relationshipLabel>Org Differences (Destination Credential)</relationshipLabel>
         <relationshipName>ToOrgDiffs</relationshipName>
         <required>false</required>
         <trackTrending>false</trackTrending>
@@ -342,7 +342,7 @@
         <active>true</active>
         <errorConditionFormula>copado__From_Org__c =  copado__To_Org__c</errorConditionFormula>
         <errorDisplayField>copado__To_Org__c</errorDisplayField>
-        <errorMessage>The Org&apos;s to be compared can not be the same.</errorMessage>
+        <errorMessage>The Org&#39;s to be compared can not be the same.</errorMessage>
     </validationRules>
     <visibility>Public</visibility>
 </CustomObject>

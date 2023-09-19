@@ -5,19 +5,19 @@
     <standardValue>
         <fullName>In Approval Process</fullName>
         <default>false</default>
-        <label>In Approval Process</label>
+        <label>En proceso de aprobación</label>
         <groupingString>InApproval</groupingString>
     </standardValue>
     <standardValue>
         <fullName>Activated</fullName>
         <default>false</default>
-        <label>Activated</label>
+        <label>Activado</label>
         <groupingString>Activated</groupingString>
     </standardValue>
     <standardValue>
         <fullName>Draft</fullName>
         <default>false</default>
-        <label>Draft</label>
+        <label>Borrador</label>
         <groupingString>Draft</groupingString>
     </standardValue>
 </StandardValueSet>
